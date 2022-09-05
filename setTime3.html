@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #root {
+        width: 100vw;
+        height: 100vh;
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <section id="target"></section>
+    </div>
+    <script>
+      const targetSection = document.getElementById("target");
+      let size = 0;
+
+      let timer = setInterval(() => {
+        let test = Math.floor(Math.random() * 100) + "px";
+
+        targetSection.style.width = test;
+        targetSection.style.height = test;
+
+        if (test === "12px") {
+          targetSection.style.backgroundColor = "blue";
+        }
+
+        if (test === "50px") {
+          clearInterval(timer);
+        }
+      }, 60);
+
+      targetSection.style.backgroundColor = "#ff2";
+    </script>
+  </body>
+</html>
